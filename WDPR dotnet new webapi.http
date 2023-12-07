@@ -1,0 +1,6 @@
+@WDPR_dotnet_new_webapi_HostAddress = http://localhost:5240
+
+GET {{WDPR_dotnet_new_webapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

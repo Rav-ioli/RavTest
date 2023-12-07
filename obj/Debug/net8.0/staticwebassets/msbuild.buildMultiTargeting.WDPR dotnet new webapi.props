@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WDPR dotnet new webapi.props" />
+</Project>

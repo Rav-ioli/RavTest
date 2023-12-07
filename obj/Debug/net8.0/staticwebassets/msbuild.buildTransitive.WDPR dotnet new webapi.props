@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\WDPR dotnet new webapi.props" />
+</Project>
