@@ -30,18 +30,18 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 
-// using (var scope = app.Services.CreateScope())
-// {
-//     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-//     var roles = new[] { "Admin", "Manager", "Member" };
-//     foreach (var role in roles)
-//     {
-//         if (!await roleManager.RoleExistsAsync(role))
-//         {
-//             await roleManager.CreateAsync(new IdentityRole(role));
-//         }
-//     }
-// }
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var roles = new[] { "Admin", "Manager", "Member","Guest" };
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+        {
+            await roleManager.CreateAsync(new IdentityRole(role));
+        }
+    }
+}
 
 using (var scope = app.Services.CreateScope())
 {
@@ -50,7 +50,7 @@ using (var scope = app.Services.CreateScope())
     var email = "admin@localhost";
     var password = "Admin123!";
     if (!await userManager.Users.AnyAsync())
-    {
+    {    Activator.CreateInstance<IdentityUser>();
         var adminUser = new IdentityUser()
         {
             UserName = email,
@@ -60,6 +60,9 @@ using (var scope = app.Services.CreateScope())
         System.Console.WriteLine(result.Succeeded);
         var result2 = await userManager.AddToRoleAsync(adminUser, "Admin");
         System.Console.WriteLine(result2.Succeeded);
+
+
+        
     }
 }
 
