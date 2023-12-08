@@ -3,4 +3,6 @@
 GET {{WDPR_dotnet_new_webapi_HostAddress}}/weatherforecast/
 Accept: application/json
 
+GET {{WDPR_dotnet_new_webapi_HostAddress}}/api/User/RegisterUser
+Accept: application/json
 ###
