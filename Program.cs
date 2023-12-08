@@ -14,7 +14,10 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 .AddRoles<IdentityRole>()
 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddRoles<IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+//builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddRoles<IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+
+
+
 // builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
 // .AddEntityFrameworkStores<ApplicationDbContext>()
 // .AddDefaultTokenProviders();

@@ -11,9 +11,9 @@ namespace MyApplication.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
-        public readonly UserManager<ApplicationUser> _userManager;
+        public readonly UserManager<IdentityUser> _userManager;
 
-        public UserController(UserManager<ApplicationUser> userManager)
+        public UserController(UserManager<IdentityUser> userManager)
         {
             _userManager = userManager;
         }
@@ -24,7 +24,7 @@ namespace MyApplication.Controllers
             System.Console.WriteLine(_userManager);
             Console.WriteLine("Creating user");
 
-            var user = new ApplicationUser
+            var user = new IdentityUser
             {
                 UserName = registerDto.username,
                 Email = registerDto.email,
@@ -64,12 +64,7 @@ namespace MyApplication.Controllers
                 return NotFound();
             }
         }
-        [HttpPost("RegiawsterUser")]
-        public async Task<ActionResult> test([FromBody] RegisterDto registerDto)
-        {
-            System.Console.WriteLine(_userManager);
-            return Ok();
-        }
+    
     }
 }
 
