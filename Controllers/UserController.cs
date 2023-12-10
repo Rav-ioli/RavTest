@@ -49,6 +49,13 @@ namespace MyApplication.Controllers
             }
         }
 
+        [HttpPost("ReegisterUser")]
+        public async Task<ActionResult> ReegisterNewUser()
+        {
+            System.Console.WriteLine("Method Called");
+            return Ok();
+        }
+
         [HttpGet("GetUser")]
         public async Task<ActionResult<ApplicationUser>> GetUser()
         {   

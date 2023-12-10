@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WDPR dotnet new webapi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a572fb40c03974783561bca75c5cc3c83dab2fe6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e634dbb6b67eedf7d6747b99b2136554daf0acba")]
 [assembly: System.Reflection.AssemblyProductAttribute("WDPR dotnet new webapi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WDPR dotnet new webapi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
