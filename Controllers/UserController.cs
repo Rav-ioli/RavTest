@@ -2,7 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using MyApplication.Dto;
-using MyApplication.Domain;
+//using MyApplication.Domain;
+using MyApplication.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace MyApplication.Controllers
@@ -11,11 +12,15 @@ namespace MyApplication.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
-        public readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly AuthenticationService _authenticationService;
 
-        public UserController(UserManager<IdentityUser> userManager)
+        public UserController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, AuthenticationService authenticationService)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
+            _authenticationService = authenticationService;
         }
 
         [HttpPost("RegisterUser")]
@@ -49,15 +54,34 @@ namespace MyApplication.Controllers
             }
         }
 
-        [HttpPost("ReegisterUser")]
-        public async Task<ActionResult> ReegisterNewUser()
+        [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
+    {
+        // if (!await _authenticationService.ValidateCredentials(loginDto.email, loginDto.password))
+        //     return Unauthorized();
+
+        var expectedUser = await _authenticationService.GetUser(loginDto.email);
+
+        if (expectedUser == null)
         {
-            System.Console.WriteLine("Method Called");
-            return Ok();
+            return NotFound("No user found");
         }
+        
+        await _signInManager.SignInAsync(expectedUser, true);
+
+        if(!expectedUser.TwoFactorEnabled) return Ok(new { token = await _authenticationService.CreateJwtToken(expectedUser)});
+
+        // if (expectedUser.PhoneNumber == null) return BadRequest("User should have phone number for 2fa");
+        
+        // if (!expectedUser.PhoneNumberConfirmed) return BadRequest("Phone number should be confirmed");
+
+        // await _authenticationService.SendTwoFactorAsync(expectedUser.PhoneNumber, expectedUser);
+        return StatusCode(303, "mfa");
+    }
+    
 
         [HttpGet("GetUser")]
-        public async Task<ActionResult<ApplicationUser>> GetUser()
+        public async Task<ActionResult<IdentityUser>> GetUser()
         {   
             var users = await _userManager.Users.ToListAsync();
             var firstUser = users.FirstOrDefault();
@@ -71,7 +95,12 @@ namespace MyApplication.Controllers
                 return NotFound();
             }
         }
-    
+    [HttpPost("ReegisterUser")]
+        public async Task<ActionResult> ReegisterNewUser()
+        {
+            System.Console.WriteLine("Method Called");
+            return Ok();
+        }
     }
 }
 

@@ -512,3 +512,4 @@ D:\Github\RavTest\obj\Debug\net8.0\refint\WDPR dotnet new webapi.dll
 D:\Github\RavTest\obj\Debug\net8.0\WDPR dotnet new webapi.pdb
 D:\Github\RavTest\obj\Debug\net8.0\WDPR dotnet new webapi.genruntimeconfig.cache
 D:\Github\RavTest\obj\Debug\net8.0\ref\WDPR dotnet new webapi.dll
+D:\Github\RavTest\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
