@@ -5,6 +5,8 @@ using MyApplication.Dto;
 //using MyApplication.Domain;
 using MyApplication.Services;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MyApplication.Controllers
 {
@@ -15,12 +17,17 @@ namespace MyApplication.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly AuthenticationService _authenticationService;
+        private ValidationService _validationService;
+            private readonly IAuthorizationService _authorizationService;
 
-        public UserController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, AuthenticationService authenticationService)
+
+        public UserController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, AuthenticationService authenticationService,IAuthorizationService authorizationService, ValidationService validationService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _authenticationService = authenticationService;
+            _validationService = validationService;
+            _authorizationService = authorizationService;
         }
 
         [HttpPost("RegisterUser")]
@@ -55,34 +62,28 @@ namespace MyApplication.Controllers
         }
 
         [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
-    {
-        // if (!await _authenticationService.ValidateCredentials(loginDto.email, loginDto.password))
-        //     return Unauthorized();
-
-        var expectedUser = await _authenticationService.GetUser(loginDto.email);
-
-        if (expectedUser == null)
+        public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
         {
-            return NotFound("No user found");
+            // if (!await _authenticationService.ValidateCredentials(loginDto.email, loginDto.password))
+            //     return Unauthorized();
+
+            var expectedUser = await _authenticationService.GetUser(loginDto.email);
+
+            if (expectedUser == null)
+            {
+                return NotFound("No user found");
+            }
+
+            await _signInManager.SignInAsync(expectedUser, true);
+
+            return Ok(new { token = await _authenticationService.CreateJwtToken(expectedUser) });
+
         }
-        
-        await _signInManager.SignInAsync(expectedUser, true);
 
-        if(!expectedUser.TwoFactorEnabled) return Ok(new { token = await _authenticationService.CreateJwtToken(expectedUser)});
-
-        // if (expectedUser.PhoneNumber == null) return BadRequest("User should have phone number for 2fa");
-        
-        // if (!expectedUser.PhoneNumberConfirmed) return BadRequest("Phone number should be confirmed");
-
-        // await _authenticationService.SendTwoFactorAsync(expectedUser.PhoneNumber, expectedUser);
-        return StatusCode(303, "mfa");
-    }
-    
 
         [HttpGet("GetUser")]
         public async Task<ActionResult<IdentityUser>> GetUser()
-        {   
+        {
             var users = await _userManager.Users.ToListAsync();
             var firstUser = users.FirstOrDefault();
 
@@ -95,14 +96,42 @@ namespace MyApplication.Controllers
                 return NotFound();
             }
         }
-    [HttpPost("ReegisterUser")]
-        public async Task<ActionResult> ReegisterNewUser()
+        [HttpPost("TestMethod")]
+        public async Task<ActionResult> TestMethod()
         {
             System.Console.WriteLine("Method Called");
             return Ok();
         }
+
+        [Authorize(Policy = "AdminOnly")]
+        [HttpPost("TestMethodPolicy")]
+        public async Task<ActionResult> TestMethodPolicy()
+        {
+            System.Console.WriteLine("Method Called");
+            return Ok();
+        }
+        [HttpPost("TestMethodPolicy2")]
+        public async Task<IActionResult> SomeAction()
+        {
+            // Check if the user is authorized based on a policy
+            var authorizationResult = await _authorizationService.AuthorizeAsync(User, null, "AdminOnly");
+            if (!authorizationResult.Succeeded)
+            {
+                // User is not authorized
+                return Forbid();
+            }
+
+            // User is authorized, proceed with the action logic
+            System.Console.WriteLine("Authorized");
+            return Ok("Authorized");
+        }
+
+        [HttpPost("Validate")]
+        public async Task<ActionResult> ValidateJwtRoles([FromBody] IList<string> roles)
+        {
+            return await _validationService.ValidateJwtClaims(roles, User) ? Ok(true) : Unauthorized(false);
+        }
     }
 }
 
-       
-    
+

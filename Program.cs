@@ -78,18 +78,32 @@ builder.Services.AddAuthentication(opt =>
         });
 
 
+// builder.Services.AddAuthorization(options =>
+//         {
+//             options.AddPolicy("AdminOnly", x => x.RequireClaim(ClaimTypes.Authentication, "Admin"));
+//             options.AddPolicy("BedrijfOnly", x => x.RequireClaim(ClaimTypes.Authentication, "Bedrijf","Admin"));
+//             options.AddPolicy("UserOnly", x => x.RequireClaim(ClaimTypes.Authentication, "Admin", "Ervaringsdeskundige", "Bedrijf"));
+//         });
+
+// builder.Services.AddAuthorization(options =>
+// {
+//     options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+//     options.AddPolicy("BedrijfOnly", policy => policy.RequireRole("Bedrijf", "Admin"));
+//     options.AddPolicy("UserOnly", policy => policy.RequireRole("Admin", "Ervaringsdeskundige", "Bedrijf"));
+// });
+
+
 builder.Services.AddAuthorization(options =>
-        {
-
-            options.AddPolicy("AdminOnly", x => x.RequireClaim(ClaimTypes.Authentication, "Admin"));
-            options.AddPolicy("BedrijfOnly", x => x.RequireClaim(ClaimTypes.Authentication, "Bedrijf","Admin"));
-            options.AddPolicy("UserOnly", x => x.RequireClaim(ClaimTypes.Authentication, "Admin", "Ervaringsdeskundige", "Bedrijf"));
-        });
-
+{
+    options.AddPolicy("AdminOnly", policy => policy.RequireClaim("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/authentication", "Admin"));
+    options.AddPolicy("BedrijfOnly", policy => policy.RequireClaim("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/authentication", "Bedrijf", "Admin"));
+    options.AddPolicy("UserOnly", policy => policy.RequireClaim("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/authentication", "Admin", "Ervaringsdeskundige", "Bedrijf"));
+});
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<AuthenticationService>();
+builder.Services.AddScoped<ValidationService>();
 builder.Services.AddScoped<UserService>();
 var app = builder.Build();
  app.UseCors("AllowReactApp");
@@ -105,8 +119,6 @@ if (app.Environment.IsDevelopment())
 
  using (var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope())
         {
-            
-           
             var db = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>().Database;
 
             while (!db.CanConnect())
