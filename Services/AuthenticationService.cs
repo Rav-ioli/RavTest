@@ -36,7 +36,7 @@ public class AuthenticationService
 
         var roles = await _userManager.GetClaimsAsync(user);
         claims.AddRange(roles);
-
+        
         var tokenOptions = new JwtSecurityToken
         (
             issuer: _configuration.GetValue<string>("ValidIssuer"),

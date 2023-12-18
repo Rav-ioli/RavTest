@@ -15,46 +15,46 @@ public class ValidationService
         _authorizationService = authorizationService;
     }
     
-    // public async Task<bool> ValidateJwtClaims(IList<string> claims, ClaimsPrincipal userClaim)
-    // {
-    //     foreach (var policyName in claims)
-    //     {
-    //         var policy = await _authorizationPolicyProvider.GetPolicyAsync(policyName);
-    //         System.Console.WriteLine($"Policy: {policy} and PolicyName: {policyName}");
-    //         if (policy == null)
-    //         {
-    //             continue;
-    //         }
-            
-    //         var result = await _authorizationService.AuthorizeAsync(userClaim, policy);
-
-    //         if (result.Succeeded)
-    //         {
-    //             return true;
-    //         }
-    //     }
-
-    //     return false;
-    // }
-
-    public async Task<bool> ValidateJwtClaims(IList<string> requiredRoles, ClaimsPrincipal userClaim)
-{
-    // Extract the claim values from the ClaimsPrincipal object
-    var claimValues = userClaim.Claims
-        .Where(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/authentication")
-        .Select(c => c.Value)
-        .ToList();
-
-    foreach (var requiredRole in requiredRoles)
+    public async Task<bool> ValidateJwtClaims(IList<string> claims, ClaimsPrincipal userClaim)
     {
-        // Check if any of the claim values match the required roles
-        if (claimValues.Contains(requiredRole))
+        foreach (var policyName in claims)
         {
-            return true;
+            var policy = await _authorizationPolicyProvider.GetPolicyAsync(policyName);
+            System.Console.WriteLine($"Policy: {policy} and PolicyName: {policyName}");
+            if (policy == null)
+            {
+                continue;
+            }
+            
+            var result = await _authorizationService.AuthorizeAsync(userClaim, policy);
+
+            if (result.Succeeded)
+            {
+                return true;
+            }
         }
+
+        return false;
     }
 
-    return false;
-}
+//     public async Task<bool> ValidateJwtClaims(IList<string> requiredRoles, ClaimsPrincipal userClaim)
+// {
+//     // Extract the claim values from the ClaimsPrincipal object
+//     var claimValues = userClaim.Claims
+//         .Where(c => c.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role")
+//         .Select(c => c.Value)
+//         .ToList();
+
+//     foreach (var requiredRole in requiredRoles)
+//     {
+//         // Check if any of the claim values match the required roles
+//         if (claimValues.Contains(requiredRole))
+//         {
+//             return true;
+//         }
+//     }
+
+//     return false;
+// }
 
 }

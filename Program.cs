@@ -75,6 +75,27 @@ builder.Services.AddAuthentication(opt =>
                         Encoding.UTF8.GetBytes(
                             "awef98awef978haweof8g7aw789efhh789awef8h9awh89efh89awe98f89uawef9j8aw89hefawef"))
             };
+            opt.Events = new JwtBearerEvents
+            {
+                OnAuthenticationFailed = context =>
+                {
+                    // Handle failed authentication
+                    Console.WriteLine("OnAuthenticationFailed: " +
+                                      context.Exception.Message);
+                    return Task.CompletedTask;
+                },
+                OnTokenValidated = context =>
+                {
+                    // Transform claims or additional logic after successful validation
+                    // For example, adding custom claims to the identity
+                    Console.WriteLine("OnTokenValidated: " +
+                                      context.SecurityToken);
+                    var claimsIdentity = context.Principal.Identity as ClaimsIdentity;
+                    claimsIdentity?.AddClaim(new Claim("custom_claim", "some_value"));
+ 
+                    return Task.CompletedTask;
+                }
+            };
         });
 
 
@@ -95,9 +116,9 @@ builder.Services.AddAuthentication(opt =>
 
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("AdminOnly", policy => policy.RequireClaim("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/authentication", "Admin"));
-    options.AddPolicy("BedrijfOnly", policy => policy.RequireClaim("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/authentication", "Bedrijf", "Admin"));
-    options.AddPolicy("UserOnly", policy => policy.RequireClaim("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/authentication", "Admin", "Ervaringsdeskundige", "Bedrijf"));
+    options.AddPolicy("AdminOnly", policy => policy.RequireClaim(ClaimTypes.Authentication, "Admin"));
+    options.AddPolicy("BedrijfOnly", policy => policy.RequireClaim(ClaimTypes.Authentication, "Bedrijf", "Admin"));
+    options.AddPolicy("UserOnly", policy => policy.RequireClaim(ClaimTypes.Authentication, "Admin", "Ervaringsdeskundige", "Bedrijf"));
 });
 
 builder.Services.AddEndpointsApiExplorer();

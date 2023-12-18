@@ -96,35 +96,17 @@ namespace MyApplication.Controllers
                 return NotFound();
             }
         }
-        [HttpPost("TestMethod")]
-        public async Task<ActionResult> TestMethod()
-        {
-            System.Console.WriteLine("Method Called");
-            return Ok();
-        }
-
+        
         [Authorize(Policy = "AdminOnly")]
-        [HttpPost("TestMethodPolicy")]
+        [HttpPost("TestMethodPolicyAdminOnly")]
         public async Task<ActionResult> TestMethodPolicy()
         {
             System.Console.WriteLine("Method Called");
             return Ok();
         }
-        [HttpPost("TestMethodPolicy2")]
-        public async Task<IActionResult> SomeAction()
-        {
-            // Check if the user is authorized based on a policy
-            var authorizationResult = await _authorizationService.AuthorizeAsync(User, null, "AdminOnly");
-            if (!authorizationResult.Succeeded)
-            {
-                // User is not authorized
-                return Forbid();
-            }
 
-            // User is authorized, proceed with the action logic
-            System.Console.WriteLine("Authorized");
-            return Ok("Authorized");
-        }
+
+     
 
         [HttpPost("Validate")]
         public async Task<ActionResult> ValidateJwtRoles([FromBody] IList<string> roles)
