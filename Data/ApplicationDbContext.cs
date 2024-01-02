@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using AccessibilityModels;
 
 namespace MyApplication.Data;
 
 public class ApplicationDbContext : IdentityDbContext<IdentityUser>
 {
+    public DbSet<Onderzoek> Onderzoeken { get; set; }
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {

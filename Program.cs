@@ -5,6 +5,7 @@ using MyApplication.Data;
 //using MyApplication.Domain;
 using MyApplication.Dto;
 using MyApplication.Controllers;
+using AccessibilityModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer; // Add this using directive
 using Microsoft.AspNetCore.Authentication.BearerToken;
 using MyApplication.Services;
@@ -126,6 +127,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<AuthenticationService>();
 builder.Services.AddScoped<ValidationService>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<OnderzoekService>();
 var app = builder.Build();
  app.UseCors("AllowReactApp");
 // Configure the HTTP request pipeline.
@@ -199,6 +201,56 @@ if (app.Environment.IsDevelopment())
                     }
                 }
             }
+        var onderzoekService = s.GetRequiredService<OnderzoekService>();
+        await onderzoekService.ClearOnderzoekDB();
+
+                var onderzoeken = new List<OnderzoekDto>
+                {
+                    new OnderzoekDto()
+                    {
+                        titel = "Onderzoek 1",
+                        korteBeschrijving = "This is the first onderzoek",
+                        datum = DateTime.Now.AddDays(-7),
+                        beloning = "13250 euro",
+                        soortOnderzoek = "Enquete"
+                    },
+                    new OnderzoekDto()
+                    {
+                        titel = "Onderzoek 2",
+                        korteBeschrijving = "This is the second onderzoek",
+                        datum = DateTime.Now.AddDays(-7),
+                        beloning = "1067 euro",
+                        soortOnderzoek = "Enquete"
+                    },
+                    new OnderzoekDto()
+                    {
+                        titel = "Onderzoek 3",
+                        korteBeschrijving = "This is the third onderzoek",
+                        datum = DateTime.Now.AddDays(-7),
+                        beloning = "1075 euro",
+                        soortOnderzoek = "Fysiek"
+                    },
+                    new OnderzoekDto()
+                    {
+                        titel = "Onderzoek 4",
+                        korteBeschrijving = "This is the fourth onderzoek",
+                        datum = DateTime.Now.AddDays(-7),
+                        beloning = "1 euro",
+                        soortOnderzoek = "Fysiek"
+                    },
+                    new OnderzoekDto()
+                    {
+                        titel = "Onderzoek 5",
+                        korteBeschrijving = "In this fysiek onderzoek, you will take on the role of a cop who needs to devise a strategy to apprehend and neutralize a notorious robber. Use your detective skills, gather evidence, and plan your moves carefully to bring this criminal to justice.",
+                        datum = DateTime.Now.AddDays(-7),
+                        beloning = "1250 euro",
+                        soortOnderzoek = "Fysiek"
+                    }
+                };
+foreach (var onderzoek in onderzoeken){
+    await onderzoekService.CreateOnderzoek(onderzoek);
+}
+            
 
 
             app.UseSwagger();
