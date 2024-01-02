@@ -173,28 +173,23 @@ if (app.Environment.IsDevelopment())
                 var result = await userManager.CreateAsync(user, user.PasswordHash);
                 if (result.Succeeded)
                 {
+                    
                     if (i == 1)
-                    {
+
+                    {                      
                         await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "Admin"));
+                      await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "Bedrijf"));
                         await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "Ervaringsdeskundige"));
                     }
-                    // if (i == 2)
-                    // {
-                    //    await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "admin"));
-                    //     await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "user"));
-                    //     await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "acteur"));
-                        
-                    //     await userService.CreateActorAsync(new UserDtoAdmin(){Username = user.UserName, Email = user.Email, TwoFactorEnabled = user.TwoFactorEnabled, Actor = "Sneed", Id = user.Id}, user);
-                    // }
-                    
-                    // if (i == 5)
-                    // {
-                    //     await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "admin"));
-                    //     await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "user"));
-                    //     await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "acteur"));
-                        
-                    //     await userService.CreateActorAsync(new UserDtoAdmin(){Username = user.UserName, Email = user.Email, TwoFactorEnabled = user.TwoFactorEnabled, Actor = "Ravish", Id = user.Id}, user);
-                    // }
+                    if (i == 2)
+                    {
+                        await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "Bedrijf"));
+                        await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "Ervaringsdeskundige"));
+                    }
+                    if(i == 3)
+                    {
+                        await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "Bedrijf"));
+                    }
                     else
                     {
                         await userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "Ervaringsdeskundige"));
