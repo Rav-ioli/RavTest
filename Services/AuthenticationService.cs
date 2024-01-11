@@ -5,28 +5,35 @@ using AccessibilityModels;
 
 //using MyApplication.Domain;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using MyApplication.Data;
 
 namespace MyApplication.Services;
 
 public class AuthenticationService
 {
-    private  Microsoft.AspNetCore.Identity.UserManager<Gebruiker> _userManager;
+    private  UserManager<Gebruiker> _userManager;
+    private ApplicationDbContext _databaseContext;
     private  IConfiguration _configuration;
 
 
-    public AuthenticationService(Microsoft.AspNetCore.Identity.UserManager<Gebruiker> userManager, IConfiguration configuration)
+    public AuthenticationService(Microsoft.AspNetCore.Identity.UserManager<Gebruiker> userManager, IConfiguration configuration,ApplicationDbContext databaseContext)
     {
         _userManager = userManager;
         _configuration = configuration;
-    
+        _databaseContext = databaseContext;
     }
 
-    public async Task<Gebruiker?> GetUser(string email)
+    // public async Task<Gebruiker?> GetUser(string email)
+    // {
+    //     return await _userManager.FindByEmailAsync(email);
+    // }
+ public async Task<Gebruiker?> GetUser(string email)
     {
-        return await _userManager.FindByEmailAsync(email);
+        return await _databaseContext.Gebruikers.FirstOrDefaultAsync(b => b.Email == email);
+        // return await _userManager.FindByEmailAsync(email);
     }
-
     public async Task<string> CreateJwtToken(Gebruiker user)
     {
         var secret = new SymmetricSecurityKey(

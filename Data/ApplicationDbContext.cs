@@ -85,18 +85,18 @@ public class ApplicationDbContext : IdentityDbContext<Gebruiker>
             .HasForeignKey(gb => gb.BeperkingId);
 
 
-builder.Entity<ErvaringsdeskundigenOnderzoeken>()
-    .HasKey(eo => new { eo.ErvaringsdeskundigeId, eo.OnderzoekId });
+        builder.Entity<ErvaringsdeskundigenOnderzoeken>()
+            .HasKey(eo => new { eo.ErvaringsdeskundigeId, eo.OnderzoekId });
 
-builder.Entity<ErvaringsdeskundigenOnderzoeken>()
-    .HasOne(eo => eo.Ervaringsdeskundige)
-    .WithMany(e => e.ErvaringsdeskundigenOnderzoeken)
-    .HasForeignKey(eo => eo.ErvaringsdeskundigeId);
+        builder.Entity<ErvaringsdeskundigenOnderzoeken>()
+            .HasOne(eo => eo.Ervaringsdeskundige)
+            .WithMany(e => e.ErvaringsdeskundigenOnderzoeken)
+            .HasForeignKey(eo => eo.ErvaringsdeskundigeId);
 
-builder.Entity<ErvaringsdeskundigenOnderzoeken>()
-    .HasOne(eo => eo.Onderzoek)
-    .WithMany(o => o.ErvaringsdeskundigenOnderzoeken)
-    .HasForeignKey(eo => eo.OnderzoekId);
+        builder.Entity<ErvaringsdeskundigenOnderzoeken>()
+            .HasOne(eo => eo.Onderzoek)
+            .WithMany(o => o.ErvaringsdeskundigenOnderzoeken)
+            .HasForeignKey(eo => eo.OnderzoekId);
 
     }
 }

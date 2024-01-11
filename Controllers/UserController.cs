@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using AccessibilityModels;
+using MyApplication.Data;
 
 namespace MyApplication.Controllers
 {
@@ -16,22 +17,55 @@ namespace MyApplication.Controllers
     public class UserController : ControllerBase
     {
         private readonly UserManager<Gebruiker> _userManager;
+        private ApplicationDbContext _databaseContext;
         private readonly SignInManager<Gebruiker> _signInManager;
         private readonly AuthenticationService _authenticationService;
         private ValidationService _validationService;
             private readonly IAuthorizationService _authorizationService;
 
 
-        public UserController(UserManager<Gebruiker> userManager, SignInManager<Gebruiker> signInManager, AuthenticationService authenticationService,IAuthorizationService authorizationService, ValidationService validationService)
+        public UserController(UserManager<Gebruiker> userManager, SignInManager<Gebruiker> signInManager, AuthenticationService authenticationService,IAuthorizationService authorizationService, ValidationService validationService, ApplicationDbContext databaseContext)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _authenticationService = authenticationService;
             _validationService = validationService;
             _authorizationService = authorizationService;
+            _databaseContext = databaseContext;
         }
 
-        [HttpPost("RegisterUser")]
+        // [HttpPost("RegisterUser")]
+        // public async Task<ActionResult> RegisterNewUser([FromBody] RegisterDto registerDto)
+        // {
+        //     System.Console.WriteLine(_userManager);
+        //     Console.WriteLine("Creating user");
+
+        //     var user = new Gebruiker
+        //     {
+        //         UserName = registerDto.username,
+        //         Email = registerDto.email,
+        //         PasswordHash = registerDto.password,
+        //     };
+
+        //     var result = await _userManager.CreateAsync(user, user.PasswordHash);
+        //     if (result.Succeeded)
+        //     {
+        //         await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "Member"));
+        //         Console.WriteLine("user created");
+
+        //         var test = await _userManager.FindByNameAsync(user.UserName);
+        //         Console.WriteLine($"USER: {test.UserName}");
+
+        //         return Ok();
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine(result);
+        //         return BadRequest();
+        //     }
+        // }
+
+[HttpPost("RegisterUser")]
         public async Task<ActionResult> RegisterNewUser([FromBody] RegisterDto registerDto)
         {
             System.Console.WriteLine(_userManager);
@@ -50,8 +84,8 @@ namespace MyApplication.Controllers
                 await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "Member"));
                 Console.WriteLine("user created");
 
-                var test = await _userManager.FindByNameAsync(user.UserName);
-                Console.WriteLine($"USER: {test.UserName}");
+                // var test = await _userManager.FindByNameAsync(user.UserName);
+                // Console.WriteLine($"USER: {test.UserName}");
 
                 return Ok();
             }
@@ -80,6 +114,7 @@ namespace MyApplication.Controllers
             return Ok(new { token = await _authenticationService.CreateJwtToken(expectedUser) });
 
         }
+
 
 
         [HttpGet("GetUser")]
