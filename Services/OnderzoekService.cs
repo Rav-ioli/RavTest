@@ -18,13 +18,16 @@ public class OnderzoekService
 
 public async Task<Onderzoek> CreateOnderzoek(OnderzoekDto onderzoekDto)
     {
+
+        var bedrijf = await _databaseContext.Bedrijven.FindAsync(onderzoekDto.uitvoerendbedrijf);
         var onderzoek = new Onderzoek
         {
             Titel = onderzoekDto.titel,
             KorteBeschrijving = onderzoekDto.korteBeschrijving,
             Datum = onderzoekDto.datum,
             Beloning = onderzoekDto.beloning,
-            SoortOnderzoek = onderzoekDto.soortOnderzoek
+            SoortOnderzoek = onderzoekDto.soortOnderzoek,
+            UitvoerendBedrijf = bedrijf
         };
 
         await _databaseContext.Onderzoeken.AddAsync(onderzoek);

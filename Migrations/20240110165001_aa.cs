@@ -5,7 +5,7 @@
 namespace WDPR_dotnet_new_webapi.Migrations
 {
     /// <inheritdoc />
-    public partial class aoaoa : Migration
+    public partial class aa : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

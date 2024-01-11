@@ -7,6 +7,7 @@ using MyApplication.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using Microsoft.AspNetCore.Authorization;
+using AccessibilityModels;
 
 namespace MyApplication.Controllers
 {
@@ -14,14 +15,14 @@ namespace MyApplication.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<Gebruiker> _userManager;
+        private readonly SignInManager<Gebruiker> _signInManager;
         private readonly AuthenticationService _authenticationService;
         private ValidationService _validationService;
             private readonly IAuthorizationService _authorizationService;
 
 
-        public UserController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, AuthenticationService authenticationService,IAuthorizationService authorizationService, ValidationService validationService)
+        public UserController(UserManager<Gebruiker> userManager, SignInManager<Gebruiker> signInManager, AuthenticationService authenticationService,IAuthorizationService authorizationService, ValidationService validationService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -36,7 +37,7 @@ namespace MyApplication.Controllers
             System.Console.WriteLine(_userManager);
             Console.WriteLine("Creating user");
 
-            var user = new IdentityUser
+            var user = new Gebruiker
             {
                 UserName = registerDto.username,
                 Email = registerDto.email,

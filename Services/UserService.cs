@@ -8,17 +8,18 @@ using MyApplication.Dto;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using AccessibilityModels;
 using MyApplication.Services;
 
 namespace MyApplication.Services;
 
 public class UserService
 {
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly UserManager<Gebruiker> _userManager;
     private readonly AuthenticationService _authenticationService;
     private readonly IConfiguration _configuration;
 
-    public UserService(UserManager<IdentityUser> userManager, IConfiguration configuration, AuthenticationService authenticationService)
+    public UserService(UserManager<Gebruiker> userManager, IConfiguration configuration, AuthenticationService authenticationService)
     {
         _userManager = userManager;
         _configuration = configuration;
@@ -46,7 +47,6 @@ public class UserService
             {
                 Username = applicationUser.UserName,
                 Email = applicationUser.Email,
-                TwoFactorEnabled = applicationUser.TwoFactorEnabled,
                 Phone = applicationUser.PhoneNumber,
                 claims = claims.Select(c => c.Value).ToArray(),
                 Id = applicationUser.Id
@@ -56,7 +56,7 @@ public class UserService
         return result;
     }
 
-    public async Task<UserDtoAdmin> GetUserDtoAsync(IdentityUser applicationUser)
+    public async Task<UserDtoAdmin> GetUserDtoAsync(Gebruiker applicationUser)
     {
         var claims = await _userManager.GetClaimsAsync(applicationUser);
 
@@ -64,7 +64,6 @@ public class UserService
         {
             Username = applicationUser.UserName,
             Email = applicationUser.Email,
-            TwoFactorEnabled = applicationUser.TwoFactorEnabled,
             Phone = applicationUser.PhoneNumber,
             claims = claims.Select(c => c.Value).ToArray(),
             Id = applicationUser.Id
@@ -73,7 +72,7 @@ public class UserService
         return result;
     }
 
-    public async Task<IdentityUser?> GetUserByIIdentityAsync(IIdentity? userClaim)
+    public async Task<Gebruiker?> GetUserByIIdentityAsync(IIdentity? userClaim)
     {
         if (userClaim?.Name == null)
         {
@@ -83,7 +82,7 @@ public class UserService
         return await GetUserByUsernameAsync(userClaim.Name);
     }
 
-    public async Task<IdentityUser?> GetUserByIdAsync(Guid id)
+    public async Task<Gebruiker?> GetUserByIdAsync(Guid id)
     {
         var expectedUser = await _userManager.FindByIdAsync(id.ToString());
 
@@ -91,17 +90,17 @@ public class UserService
     }
 
 
-    public async Task<IdentityUser?> GetUserByUsernameAsync(string username)
+    public async Task<Gebruiker?> GetUserByUsernameAsync(string username)
     {
         return await _userManager.FindByNameAsync(username);
     }
 
-    public async Task DeleteUserAsync(IdentityUser user)
+    public async Task DeleteUserAsync(Gebruiker user)
     {
         await _userManager.DeleteAsync(user);
     }
 
-    public async Task<bool> DisableAccountAsync(IdentityUser user)
+    public async Task<bool> DisableAccountAsync(Gebruiker user)
     {
         user.LockoutEnabled = true;
 
@@ -111,29 +110,29 @@ public class UserService
     }
 
     //dont know if old claims have to be removed first
-    public async Task AddClaimsAsync(IdentityUser user, string[] claims)
+    public async Task AddClaimsAsync(Gebruiker user, string[] claims)
     {
         foreach (var claim in claims)
         {
             await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, claim));
         }
     }
-    
-    public async Task<IList<Claim>> GetUserClaimsAsync(IdentityUser expectedUser)
+
+    public async Task<IList<Claim>> GetUserClaimsAsync(Gebruiker expectedUser)
     {
         var result = await _userManager.GetClaimsAsync(expectedUser);
 
         return result;
     }
-    
-    public async Task UpdateClaimsAsync(IdentityUser expectedUser, string[] userDtoClaims, IList<Claim> oldClaims)
+
+    public async Task UpdateClaimsAsync(Gebruiker expectedUser, string[] userDtoClaims, IList<Claim> oldClaims)
     {
         Console.WriteLine("Remove claims");
         foreach (var oldClaim in oldClaims)
         {
             Console.WriteLine($"CLAIM: {oldClaim}");
         }
-        
+
         var toRemove = oldClaims.Where(claim => !userDtoClaims.Contains(claim.Value)).ToArray();
 
         await _userManager.RemoveClaimsAsync(expectedUser, toRemove);
@@ -143,11 +142,11 @@ public class UserService
         {
             Console.WriteLine($"CLAIM: {oldClaim}");
         }
-        
+
         await AddClaimsAsync(expectedUser, userDtoClaims);
     }
 
-    public async Task UpdateUserAsync(IdentityUser expectedUser, UserDtoAdmin userDto)
+    public async Task UpdateUserAsync(Gebruiker expectedUser, UserDtoAdmin userDto)
     {
         expectedUser.Email = userDto.Email;
         expectedUser.UserName = userDto.Username;
@@ -157,9 +156,9 @@ public class UserService
         await _userManager.UpdateAsync(expectedUser);
     }
 
-    public async Task<IdentityUser> CreateUserAsync(NewUserDtoAdmin userDto)
+    public async Task<Gebruiker> CreateUserAsync(NewUserDtoAdmin userDto)
     {
-        var newUser = new IdentityUser
+        var newUser = new Gebruiker
         {
             Email = userDto.Email,
             UserName = userDto.Username,
@@ -172,4 +171,27 @@ public class UserService
 
         return newUser;
     }
+
+    public async Task<String> GetUserIdByEmailAndDiscriminatorAsync(string email, string discriminator)
+    {
+        var users = await _userManager.Users.ToListAsync();
+
+        Gebruiker expectedUser = null;
+
+        if (discriminator == "Gebruiker")
+        {
+            expectedUser = users.OfType<Gebruiker>().FirstOrDefault(u => u.Email == email);
+        }
+        else if (discriminator == "Bedrijf")
+        {
+            expectedUser = users.OfType<Bedrijf>().FirstOrDefault(u => u.Email == email);
+        }
+        else if (discriminator == "Ervaringsdeskundige")
+        {
+            expectedUser = users.OfType<Ervaringsdeskundige>().FirstOrDefault(u => u.Email == email);
+        }
+        return expectedUser.Id;
+    }
+
+    
 }

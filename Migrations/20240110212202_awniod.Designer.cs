@@ -12,18 +12,150 @@ using MyApplication.Data;
 namespace WDPR_dotnet_new_webapi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240102174426_adwaik")]
-    partial class adwaik
+    [Migration("20240110212202_awniod")]
+    partial class awniod
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("AccessibilityModels.Beperking", b =>
+                {
+                    b.Property<int>("BeperkingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BeperkingId"));
+
+                    b.Property<string>("BeperkingNaam")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BeperkingId");
+
+                    b.ToTable("Beperkingen");
+                });
+
+            modelBuilder.Entity("AccessibilityModels.Gebruiker", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(21)
+                        .HasColumnType("nvarchar(21)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Postcode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Gebruiker");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("AccessibilityModels.GebruikerBeperkingen", b =>
+                {
+                    b.Property<string>("ErvaringsdeskundigeId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("BeperkingId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ErvaringsdeskundigeId", "BeperkingId");
+
+                    b.HasIndex("BeperkingId");
+
+                    b.ToTable("GebruikerBeperkingen");
+                });
+
+            modelBuilder.Entity("AccessibilityModels.GebruikerHulpmiddel", b =>
+                {
+                    b.Property<string>("ErvaringsdeskundigeId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("HulpmiddelId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ErvaringsdeskundigeId", "HulpmiddelId");
+
+                    b.HasIndex("HulpmiddelId");
+
+                    b.ToTable("GebruikerHulpmiddelen");
+                });
+
+            modelBuilder.Entity("AccessibilityModels.Hulpmiddel", b =>
+                {
+                    b.Property<int>("HulpmiddelId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HulpmiddelId"));
+
+                    b.Property<string>("HulpmiddelNaam")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("HulpmiddelId");
+
+                    b.ToTable("Hulpmiddelen");
+                });
 
             modelBuilder.Entity("AccessibilityModels.Onderzoek", b =>
                 {
@@ -127,71 +259,6 @@ namespace WDPR_dotnet_new_webapi.Migrations
                     b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.ToTable("AspNetUsers", (string)null);
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
                     b.Property<int>("Id")
@@ -277,6 +344,82 @@ namespace WDPR_dotnet_new_webapi.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("AccessibilityModels.Ervaringsdeskundige", b =>
+                {
+                    b.HasBaseType("AccessibilityModels.Gebruiker");
+
+                    b.Property<string>("Achternaam")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BeschikbareTijden")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EmailVoogd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("GeboorteDatum")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("MagCommercieelBenaderdWorden")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("NaamVoogd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TelefoonnummerVoogd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VoorkeurBenadering")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Voornaam")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("Ervaringsdeskundige");
+                });
+
+            modelBuilder.Entity("AccessibilityModels.GebruikerBeperkingen", b =>
+                {
+                    b.HasOne("AccessibilityModels.Beperking", "Beperking")
+                        .WithMany("GebruikerBeperkingen")
+                        .HasForeignKey("BeperkingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AccessibilityModels.Ervaringsdeskundige", "Ervaringsdeskundige")
+                        .WithMany("GebruikerBeperkingen")
+                        .HasForeignKey("ErvaringsdeskundigeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Beperking");
+
+                    b.Navigation("Ervaringsdeskundige");
+                });
+
+            modelBuilder.Entity("AccessibilityModels.GebruikerHulpmiddel", b =>
+                {
+                    b.HasOne("AccessibilityModels.Ervaringsdeskundige", "Ervaringsdeskundige")
+                        .WithMany("GebruikerHulpmiddelen")
+                        .HasForeignKey("ErvaringsdeskundigeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AccessibilityModels.Hulpmiddel", "Hulpmiddel")
+                        .WithMany("GebruikerHulpmiddelen")
+                        .HasForeignKey("HulpmiddelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ervaringsdeskundige");
+
+                    b.Navigation("Hulpmiddel");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -288,7 +431,7 @@ namespace WDPR_dotnet_new_webapi.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("AccessibilityModels.Gebruiker", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -297,7 +440,7 @@ namespace WDPR_dotnet_new_webapi.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("AccessibilityModels.Gebruiker", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -312,7 +455,7 @@ namespace WDPR_dotnet_new_webapi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("AccessibilityModels.Gebruiker", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -321,11 +464,28 @@ namespace WDPR_dotnet_new_webapi.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("AccessibilityModels.Gebruiker", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("AccessibilityModels.Beperking", b =>
+                {
+                    b.Navigation("GebruikerBeperkingen");
+                });
+
+            modelBuilder.Entity("AccessibilityModels.Hulpmiddel", b =>
+                {
+                    b.Navigation("GebruikerHulpmiddelen");
+                });
+
+            modelBuilder.Entity("AccessibilityModels.Ervaringsdeskundige", b =>
+                {
+                    b.Navigation("GebruikerBeperkingen");
+
+                    b.Navigation("GebruikerHulpmiddelen");
                 });
 #pragma warning restore 612, 618
         }

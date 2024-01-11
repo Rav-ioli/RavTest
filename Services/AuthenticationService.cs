@@ -1,6 +1,8 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using AccessibilityModels;
+
 //using MyApplication.Domain;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -9,23 +11,23 @@ namespace MyApplication.Services;
 
 public class AuthenticationService
 {
-    private  Microsoft.AspNetCore.Identity.UserManager<IdentityUser> _userManager;
+    private  Microsoft.AspNetCore.Identity.UserManager<Gebruiker> _userManager;
     private  IConfiguration _configuration;
 
 
-    public AuthenticationService(Microsoft.AspNetCore.Identity.UserManager<IdentityUser> userManager, IConfiguration configuration)
+    public AuthenticationService(Microsoft.AspNetCore.Identity.UserManager<Gebruiker> userManager, IConfiguration configuration)
     {
         _userManager = userManager;
         _configuration = configuration;
     
     }
 
-    public async Task<IdentityUser?> GetUser(string email)
+    public async Task<Gebruiker?> GetUser(string email)
     {
         return await _userManager.FindByEmailAsync(email);
     }
 
-    public async Task<string> CreateJwtToken(IdentityUser user)
+    public async Task<string> CreateJwtToken(Gebruiker user)
     {
         var secret = new SymmetricSecurityKey(
             Encoding.UTF8.GetBytes(

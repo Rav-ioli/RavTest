@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WDPR_dotnet_new_webapi.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class a : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,17 +30,15 @@ namespace WDPR_dotnet_new_webapi.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Postcode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
                     PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
                     LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
                     AccessFailedCount = table.Column<int>(type: "int", nullable: false)
@@ -48,6 +46,29 @@ namespace WDPR_dotnet_new_webapi.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Onderzoeken",
+                columns: table => new
+                {
+                    OnderzoekId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Titel = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    KorteBeschrijving = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Datum = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Locatie = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Beloning = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SoortOnderzoek = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    StatusDeelname = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TypeBeperking = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PostcodeCriteria = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MinLeeftijd = table.Column<int>(type: "int", nullable: true),
+                    MaxLeeftijd = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Onderzoeken", x => x.OnderzoekId);
                 });
 
             migrationBuilder.CreateTable(
@@ -213,6 +234,9 @@ namespace WDPR_dotnet_new_webapi.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Onderzoeken");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
