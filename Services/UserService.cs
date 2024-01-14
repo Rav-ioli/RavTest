@@ -193,5 +193,8 @@ public class UserService
         return expectedUser.Id;
     }
 
-    
+    public string GetBedrijfsnaamById(string bedrijfId2)
+    {
+        return _userManager.Users.OfType<Bedrijf>().FirstOrDefault(u => u.Id == bedrijfId2)?.Bedrijfsnaam;
+    }
 }

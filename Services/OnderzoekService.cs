@@ -27,7 +27,8 @@ public async Task<Onderzoek> CreateOnderzoek(OnderzoekDto onderzoekDto)
             Datum = onderzoekDto.datum,
             Beloning = onderzoekDto.beloning,
             SoortOnderzoek = onderzoekDto.soortOnderzoek,
-            UitvoerendBedrijf = bedrijf
+            UitvoerendBedrijf = bedrijf,
+            UitvoerendBedrijfNaam = bedrijf?.Bedrijfsnaam
         };
 
         await _databaseContext.Onderzoeken.AddAsync(onderzoek);
@@ -35,7 +36,7 @@ public async Task<Onderzoek> CreateOnderzoek(OnderzoekDto onderzoekDto)
         return onderzoek;
     }
     public async Task<Onderzoek> GetOnderzoek(int id)
-    {
+    {   
         return await _databaseContext.Onderzoeken.FindAsync(id);
     }
 

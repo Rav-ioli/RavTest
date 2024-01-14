@@ -3,6 +3,7 @@ namespace AccessibilityModels
 
     public class Onderzoek
     {
+  
 
         public int OnderzoekId { get; set; }
 
@@ -20,6 +21,7 @@ namespace AccessibilityModels
 
         public string? StatusDeelname { get; set; }
         public Bedrijf UitvoerendBedrijf { get; set; }
+        public string? UitvoerendBedrijfNaam { get; set; }
                public List<ErvaringsdeskundigenOnderzoeken>? ErvaringsdeskundigenOnderzoeken { get; set; }
 //  public List<OnderzoekDeelname>? OnderzoekDeelnemers { get; set; }
 

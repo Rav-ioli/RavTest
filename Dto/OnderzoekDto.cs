@@ -15,5 +15,6 @@ namespace MyApplication.Dto
         public string soortOnderzoek { get; set; }//online of fysiek
         [Required]
         public string uitvoerendbedrijf { get; set; }
+        public string uitvoerendbedrijfnaam { get; set; }
     }
 }

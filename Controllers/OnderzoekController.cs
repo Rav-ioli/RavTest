@@ -23,7 +23,9 @@ namespace MyApplication.Controllers
 
         [HttpGet("GetAllOnderzoeken")]
         public async Task<ActionResult<List<Onderzoek>>> GetAllOnderzoeken()
-        {
+        {          
+            // var result = await _onderzoekService.GetOnderzoeken();
+            // var uitvoerendBedrijf = result.UitvoerendBedrijf;
             return await _onderzoekService.GetOnderzoeken();
         }
         [HttpPost("CreateOnderzoek")]

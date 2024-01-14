@@ -258,7 +258,8 @@ async Task CreateOnderzoekenAsync(IServiceProvider s, ApplicationDbContext db)
                         datum = DateTime.Now.AddDays(-7),
                         beloning = "13250 euro",
                         soortOnderzoek = "Enquete",
-                        uitvoerendbedrijf = bedrijfId2
+                        uitvoerendbedrijf = bedrijfId2,
+                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId2)
                     },
                     new OnderzoekDto()
                     {
@@ -267,7 +268,8 @@ async Task CreateOnderzoekenAsync(IServiceProvider s, ApplicationDbContext db)
                         datum = DateTime.Now.AddDays(-7),
                         beloning = "1067 euro",
                         soortOnderzoek = "Enquete",
-                        uitvoerendbedrijf = bedrijfId2
+                        uitvoerendbedrijf = bedrijfId2,
+                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId2)
                     },
                     new OnderzoekDto()
                     {
@@ -276,7 +278,8 @@ async Task CreateOnderzoekenAsync(IServiceProvider s, ApplicationDbContext db)
                         datum = DateTime.Now.AddDays(-7),
                         beloning = "1075 euro",
                         soortOnderzoek = "Fysiek",
-                        uitvoerendbedrijf = bedrijfId2
+                        uitvoerendbedrijf = bedrijfId2,
+                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId2)
                     },
                     new OnderzoekDto()
                     {
@@ -285,7 +288,8 @@ async Task CreateOnderzoekenAsync(IServiceProvider s, ApplicationDbContext db)
                         datum = DateTime.Now.AddDays(-7),
                         beloning = "1 euro",
                         soortOnderzoek = "Fysiek",
-                        uitvoerendbedrijf = bedrijfId3
+                        uitvoerendbedrijf = bedrijfId3,
+                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId3)
                     },
                     new OnderzoekDto()
                     {
@@ -294,7 +298,8 @@ async Task CreateOnderzoekenAsync(IServiceProvider s, ApplicationDbContext db)
                         datum = DateTime.Now.AddDays(-7),
                         beloning = "1250 euro",
                         soortOnderzoek = "Fysiek",
-                        uitvoerendbedrijf = bedrijfId3
+                        uitvoerendbedrijf = bedrijfId3,
+                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId3)
                     }
                 };
     foreach (var onderzoek in onderzoeken)
