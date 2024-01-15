@@ -21,10 +21,10 @@ namespace MyApplication.Controllers
         private readonly SignInManager<Gebruiker> _signInManager;
         private readonly AuthenticationService _authenticationService;
         private ValidationService _validationService;
-            private readonly IAuthorizationService _authorizationService;
+        private readonly IAuthorizationService _authorizationService;
 
 
-        public UserController(UserManager<Gebruiker> userManager, SignInManager<Gebruiker> signInManager, AuthenticationService authenticationService,IAuthorizationService authorizationService, ValidationService validationService, ApplicationDbContext databaseContext)
+        public UserController(UserManager<Gebruiker> userManager, SignInManager<Gebruiker> signInManager, AuthenticationService authenticationService, IAuthorizationService authorizationService, ValidationService validationService, ApplicationDbContext databaseContext)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -65,7 +65,7 @@ namespace MyApplication.Controllers
         //     }
         // }
 
-[HttpPost("RegisterUser")]
+        [HttpPost("RegisterUser")]
         public async Task<ActionResult> RegisterNewUser([FromBody] RegisterDto registerDto)
         {
             System.Console.WriteLine(_userManager);
@@ -99,10 +99,33 @@ namespace MyApplication.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
         {
-            // if (!await _authenticationService.ValidateCredentials(loginDto.email, loginDto.password))
-            //     return Unauthorized();
+
 
             var expectedUser = await _authenticationService.GetUser(loginDto.email);
+
+            if (expectedUser == null)
+            {
+                return NotFound("No user found");
+            }
+
+            // Check if the password is correct
+            var isPasswordCorrect = await _userManager.CheckPasswordAsync(expectedUser, loginDto.password);
+            if (!isPasswordCorrect)
+            {
+                return Unauthorized("Invalid password");
+            }
+
+            await _signInManager.SignInAsync(expectedUser, true);
+
+            return Ok(new { token = await _authenticationService.CreateJwtToken(expectedUser) });
+
+        }
+        [HttpPost("LoginGoogle")]
+        public async Task<IActionResult> LoginGoogle([FromBody] string email)
+        {
+             
+
+            var expectedUser = await _authenticationService.GetUser(email);
 
             if (expectedUser == null)
             {
@@ -112,9 +135,7 @@ namespace MyApplication.Controllers
             await _signInManager.SignInAsync(expectedUser, true);
 
             return Ok(new { token = await _authenticationService.CreateJwtToken(expectedUser) });
-
         }
-
 
 
         [HttpGet("GetUser")]
@@ -132,7 +153,7 @@ namespace MyApplication.Controllers
                 return NotFound();
             }
         }
-        
+
         [Authorize(Policy = "AdminOnly")]
         [HttpPost("TestMethodPolicyAdminOnly")]
         public async Task<ActionResult> TestMethodPolicy()
@@ -142,7 +163,7 @@ namespace MyApplication.Controllers
         }
 
 
-     
+
 
         [HttpPost("Validate")]
         public async Task<ActionResult> ValidateJwtRoles([FromBody] IList<string> roles)
