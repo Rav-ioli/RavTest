@@ -520,3 +520,9 @@ C:\Users\ravo2\Documents\GitHub\RavTest\bin\Debug\net8.0\Google.Apis.Auth.dll
 C:\Users\ravo2\Documents\GitHub\RavTest\bin\Debug\net8.0\Google.Apis.Core.dll
 C:\Users\ravo2\Documents\GitHub\RavTest\bin\Debug\net8.0\System.Management.dll
 C:\Users\ravo2\Documents\GitHub\RavTest\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
+D:\Github\RavTest\bin\Debug\net8.0\Google.Apis.dll
+D:\Github\RavTest\bin\Debug\net8.0\Google.Apis.Auth.PlatformServices.dll
+D:\Github\RavTest\bin\Debug\net8.0\Google.Apis.Auth.dll
+D:\Github\RavTest\bin\Debug\net8.0\Google.Apis.Core.dll
+D:\Github\RavTest\bin\Debug\net8.0\System.Management.dll
+D:\Github\RavTest\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll

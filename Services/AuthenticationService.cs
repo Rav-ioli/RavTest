@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MyApplication.Data;
 
+
 namespace MyApplication.Services;
 
 public class AuthenticationService
@@ -16,13 +17,14 @@ public class AuthenticationService
     private  UserManager<Gebruiker> _userManager;
     private ApplicationDbContext _databaseContext;
     private  IConfiguration _configuration;
+    private IHttpContextAccessor _httpContextAccessor;
 
-
-    public AuthenticationService(Microsoft.AspNetCore.Identity.UserManager<Gebruiker> userManager, IConfiguration configuration,ApplicationDbContext databaseContext)
+    public AuthenticationService(Microsoft.AspNetCore.Identity.UserManager<Gebruiker> userManager, IConfiguration configuration,ApplicationDbContext databaseContext, IHttpContextAccessor httpContextAccessor)
     {
         _userManager = userManager;
         _configuration = configuration;
         _databaseContext = databaseContext;
+        _httpContextAccessor = httpContextAccessor;
     }
 
     // public async Task<Gebruiker?> GetUser(string email)
@@ -56,7 +58,11 @@ public class AuthenticationService
         );
 
         var newToken = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
-
+ var cookieOptions = new CookieOptions
+        {
+            Secure = true,
+        };
+        _httpContextAccessor.HttpContext?.Response.Cookies.Append("JwtToken", newToken, cookieOptions);
         return newToken;
     }
 
