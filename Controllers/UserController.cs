@@ -71,7 +71,7 @@ namespace MyApplication.Controllers
             System.Console.WriteLine(_userManager);
             Console.WriteLine("Creating user");
 
-            var user = new Gebruiker
+            var user = new Ervaringsdeskundige
             {
                 UserName = registerDto.username,
                 Email = registerDto.email,
@@ -81,7 +81,7 @@ namespace MyApplication.Controllers
             var result = await _userManager.CreateAsync(user, user.PasswordHash);
             if (result.Succeeded)
             {
-                await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "Member"));
+                await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Authentication, "Ervaringsdeskundige"));
                 Console.WriteLine("user created");
 
                 // var test = await _userManager.FindByNameAsync(user.UserName);
@@ -94,6 +94,23 @@ namespace MyApplication.Controllers
                 Console.WriteLine(result);
                 return BadRequest();
             }
+
+
+            //  var ervaringsdeskundigeUser = new Ervaringsdeskundige
+            // {
+            //     UserName = "User" + i,
+            //     Email = "user" + i + "@gmail.com",
+            //     PasswordHash = "User123!",
+            //     VoorkeurBenadering = "Telefonisch",
+            //     MagCommercieelBenaderdWorden = true,
+            //     GeboorteDatum = DateTime.Now.AddYears(-20),
+            // };
+
+            // if (!db.Gebruikers.Any(u => u.UserName == ervaringsdeskundigeUser.UserName))
+            // {
+            //     var result = await userManager.CreateAsync(ervaringsdeskundigeUser, ervaringsdeskundigeUser.PasswordHash);
+            //     await userManager.AddClaimAsync(ervaringsdeskundigeUser, new Claim(ClaimTypes.Authentication, "Ervaringsdeskundige"));
+            // }
         }
 
         [HttpPost("login")]
@@ -120,21 +137,37 @@ namespace MyApplication.Controllers
             return Ok(new { token = await _authenticationService.CreateJwtToken(expectedUser) });
 
         }
+
         [HttpPost("LoginGoogle")]
-        public async Task<IActionResult> LoginGoogle([FromBody] string email)
+        public async Task<IActionResult> LoginGoogle([FromBody] GoogleDto googleDto)
+        // {
+        //     var expectedUser = await _authenticationService.GetUser(googleDto.email);
+
+        //     if (expectedUser == null)
+        //     {
+        //         return NotFound("No user found");
+        //     }
+
+        //     await _signInManager.SignInAsync(expectedUser, true);
+
+        //     return Ok(new { token = await _authenticationService.CreateJwtToken(expectedUser) });
+        // }
         {
-             
-
-            var expectedUser = await _authenticationService.GetUser(email);
-
-            if (expectedUser == null)
+            System.Console.WriteLine(googleDto.audience);
+            System.Console.WriteLine(googleDto.issuer);
+            var expectedUser = await _authenticationService.GetUser(googleDto.email);
+            if (googleDto.audience == "235973845509-5fddgbhrq2qs29am82tsr7unpch77gms.apps.googleusercontent.com" && googleDto.issuer == "https://accounts.google.com")
             {
-                return NotFound("No user found");
+                if (expectedUser == null)
+                {
+                    return NotFound("No user found");
+                }
+
+                await _signInManager.SignInAsync(expectedUser, true);
+
+                return Ok(new { token = await _authenticationService.CreateJwtToken(expectedUser) });
             }
-
-            await _signInManager.SignInAsync(expectedUser, true);
-
-            return Ok(new { token = await _authenticationService.CreateJwtToken(expectedUser) });
+    return Unauthorized("Invalid token");
         }
 
 

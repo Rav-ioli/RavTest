@@ -514,3 +514,9 @@ D:\Github\RavTest\obj\Debug\net8.0\WDPR dotnet new webapi.genruntimeconfig.cache
 D:\Github\RavTest\obj\Debug\net8.0\ref\WDPR dotnet new webapi.dll
 D:\Github\RavTest\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\ravo2\Documents\GitHub\RavTest\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ravo2\Documents\GitHub\RavTest\bin\Debug\net8.0\Google.Apis.dll
+C:\Users\ravo2\Documents\GitHub\RavTest\bin\Debug\net8.0\Google.Apis.Auth.PlatformServices.dll
+C:\Users\ravo2\Documents\GitHub\RavTest\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\Users\ravo2\Documents\GitHub\RavTest\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\Users\ravo2\Documents\GitHub\RavTest\bin\Debug\net8.0\System.Management.dll
+C:\Users\ravo2\Documents\GitHub\RavTest\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll

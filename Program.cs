@@ -12,6 +12,8 @@ using MyApplication.Services;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Security.Claims;
+
+
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 // using MyApplication.Domain;
 
@@ -95,6 +97,7 @@ builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<OnderzoekService>();
 builder.Services.AddScoped<HulpmiddelService>();
 builder.Services.AddScoped<BeperkingService>();
+// builder.Services.AddScoped<GoogleAudienceMiddleware>();
 var app = builder.Build();
 
 app.UseCors("AllowReactApp");
