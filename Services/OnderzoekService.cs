@@ -16,7 +16,7 @@ public class OnderzoekService
     }
 
 
-public async Task<Onderzoek> CreateOnderzoek(OnderzoekDto onderzoekDto)
+    public async Task<Onderzoek> CreateOnderzoek(OnderzoekDto onderzoekDto)
     {
 
         var bedrijf = await _databaseContext.Bedrijven.FindAsync(onderzoekDto.uitvoerendbedrijf);
@@ -28,7 +28,8 @@ public async Task<Onderzoek> CreateOnderzoek(OnderzoekDto onderzoekDto)
             Beloning = onderzoekDto.beloning,
             SoortOnderzoek = onderzoekDto.soortOnderzoek,
             UitvoerendBedrijf = bedrijf,
-            UitvoerendBedrijfNaam = bedrijf?.Bedrijfsnaam
+            UitvoerendBedrijfNaam = bedrijf?.Bedrijfsnaam,
+            beperking = await _databaseContext.Beperkingen.FindAsync(onderzoekDto.typebeperking)
         };
 
         await _databaseContext.Onderzoeken.AddAsync(onderzoek);
@@ -36,7 +37,7 @@ public async Task<Onderzoek> CreateOnderzoek(OnderzoekDto onderzoekDto)
         return onderzoek;
     }
     public async Task<Onderzoek> GetOnderzoek(int id)
-    {   
+    {
         return await _databaseContext.Onderzoeken.FindAsync(id);
     }
 
@@ -53,5 +54,39 @@ public async Task<Onderzoek> CreateOnderzoek(OnderzoekDto onderzoekDto)
         }
         await _databaseContext.SaveChangesAsync();
         return null;
+    }
+    public async Task<List<Onderzoek>> GetOnderzoekenByBeperking(Beperking beperking)
+    {
+        var onderzoeken = await _databaseContext.Onderzoeken
+            .Where(o => o.beperking == beperking)
+            .ToListAsync();
+        foreach (var onderzoek in onderzoeken)
+        {
+            Console.WriteLine(onderzoek);
+        }
+        return onderzoeken;
+    }
+    public async Task CreateUserOnderzoekAsync(string GebruikerId, int OnderzoekId)
+    {
+        ErvaringsdeskundigenOnderzoeken gebruikerOnderzoek = new ErvaringsdeskundigenOnderzoeken
+        {
+            ErvaringsdeskundigeId = GebruikerId,
+            OnderzoekId = OnderzoekId
+        };
+        _databaseContext.ErvaringsdeskundigeOnderzoeken.Add(gebruikerOnderzoek);
+        await _databaseContext.SaveChangesAsync();
+    }
+    public async Task<List<OnderzoekCount>> GetCountAanmeldingForEachOnderzoek()
+    {
+        var onderzoeken = await _databaseContext.Onderzoeken.ToListAsync();
+        var result = new List<OnderzoekCount>();
+
+        foreach (var onderzoek in onderzoeken)
+        {
+            var count = await _databaseContext.ErvaringsdeskundigeOnderzoeken.Where(e => e.OnderzoekId == onderzoek.OnderzoekId).CountAsync();
+            result.Add(new OnderzoekCount { Titel = onderzoek.Titel, Count = count });
+        }
+
+        return result;
     }
 }

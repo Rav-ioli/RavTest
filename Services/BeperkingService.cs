@@ -55,5 +55,17 @@ namespace MyApplication.Services
 
             await _databaseContext.SaveChangesAsync();
         }
+        public async Task<List<Beperking>> GetBeperkingenByUserEmail(string email)
+        {
+            var gebruiker = await _databaseContext.Ervaringsdeskundigen.FirstOrDefaultAsync(e => e.Email == email);
+            var gebruikerBeperkingen = await _databaseContext.GebruikerBeperkingen.Where(g => g.ErvaringsdeskundigeId == gebruiker.Id).ToListAsync();
+            List<Beperking> beperkingen = new List<Beperking>();
+            foreach (var gebruikerBeperking in gebruikerBeperkingen)
+            {
+                var beperking = await _databaseContext.Beperkingen.FirstOrDefaultAsync(b => b.BeperkingId == gebruikerBeperking.BeperkingId);
+                beperkingen.Add(beperking);
+            }
+            return beperkingen;
+        }
     }
 }

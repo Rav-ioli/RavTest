@@ -4,10 +4,10 @@ namespace MyApplication.Dto;
 
 public class UserDto
 {
-    [Required] public string Username { get; set; }
-    [Required] public string Email { get; set; }
+     public string Username { get; set; }
+  public string Email { get; set; }
 
-    [Required] public bool TwoFactorEnabled { get; set; }
+     public bool TwoFactorEnabled { get; set; }
 
     public bool? NieuwsBriefEnabled { get; set; }
     public string? Phone { get; set; }

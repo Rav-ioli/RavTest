@@ -16,5 +16,6 @@ namespace MyApplication.Dto
         [Required]
         public string uitvoerendbedrijf { get; set; }
         public string uitvoerendbedrijfnaam { get; set; }
+        public int typebeperking { get; set; }
     }
 }

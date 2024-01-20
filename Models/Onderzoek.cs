@@ -30,6 +30,7 @@ namespace AccessibilityModels
         public string? PostcodeCriteria { get; set; }
         public int? MinLeeftijd { get; set; }
         public int? MaxLeeftijd { get; set; }
+        public Beperking beperking { get; set; }
 
     }
 

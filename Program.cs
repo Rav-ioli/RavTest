@@ -15,6 +15,7 @@ using System.Security.Claims;
 
 
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
+using System.Text.Json.Serialization;
 // using MyApplication.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -97,6 +98,10 @@ builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<OnderzoekService>();
 builder.Services.AddScoped<HulpmiddelService>();
 builder.Services.AddScoped<BeperkingService>();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+});
 // builder.Services.AddScoped<GoogleAudienceMiddleware>();
 var app = builder.Build();
 
@@ -127,11 +132,13 @@ using (var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>(
     var s = app.Services.CreateScope().ServiceProvider;
 
     CreateUsersAsync(s, db).Wait();
-    CreateOnderzoekenAsync(s, db).Wait();
-    CreateHulpmiddelenAsync(s, db).Wait();
-    CreateBeperkingenAsync(s, db).Wait();
-    CreateUserBeperkingenAsync(s, db).Wait();
-    CreateUserHulpmiddelenAsync(s, db).Wait();
+    await CreateBeperkingenAsync(s, db);
+
+    await CreateHulpmiddelenAsync(s, db);
+    await CreateUserBeperkingenAsync(s, db);
+    await CreateUserHulpmiddelenAsync(s, db);
+    await CreateOnderzoekenAsync(s, db);
+    await CreateGebruikerOnderzoeken(s, db);
 }
 
 app.UseSwagger();
@@ -163,7 +170,7 @@ async Task CreateUsersAsync(IServiceProvider s, ApplicationDbContext db)
 {
     var userManager = s.GetRequiredService<UserManager<Gebruiker>>();
 
-    for (int i = 1; i <= 5; i++)
+    for (int i = 1; i <= 10; i++)
     {
         if (i == 1)
         {
@@ -249,6 +256,11 @@ async Task CreateOnderzoekenAsync(IServiceProvider s, ApplicationDbContext db)
 {
     var onderzoekService = s.GetRequiredService<OnderzoekService>();
     var userService = s.GetRequiredService<UserService>();
+    var beperkingService = s.GetRequiredService<BeperkingService>();
+    var beperkingList = await beperkingService.GetBeperkingen();
+    var random = new Random();
+    // var randomBeperking = beperkingList[random.Next(beperkingList.Count)];
+
     await onderzoekService.ClearOnderzoekDB();
     string bedrijfId2 = await userService.GetUserIdByEmailAndDiscriminatorAsync("user2@gmail.com", "Bedrijf");
     string bedrijfId3 = await userService.GetUserIdByEmailAndDiscriminatorAsync("user3@gmail.com", "Bedrijf");
@@ -262,7 +274,8 @@ async Task CreateOnderzoekenAsync(IServiceProvider s, ApplicationDbContext db)
                         beloning = "13250 euro",
                         soortOnderzoek = "Enquete",
                         uitvoerendbedrijf = bedrijfId2,
-                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId2)
+                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId2),
+                        typebeperking = beperkingList[random.Next(beperkingList.Count)].BeperkingId
                     },
                     new OnderzoekDto()
                     {
@@ -272,7 +285,8 @@ async Task CreateOnderzoekenAsync(IServiceProvider s, ApplicationDbContext db)
                         beloning = "1067 euro",
                         soortOnderzoek = "Enquete",
                         uitvoerendbedrijf = bedrijfId2,
-                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId2)
+                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId2),
+                        typebeperking =  beperkingList[random.Next(beperkingList.Count)].BeperkingId
                     },
                     new OnderzoekDto()
                     {
@@ -282,7 +296,8 @@ async Task CreateOnderzoekenAsync(IServiceProvider s, ApplicationDbContext db)
                         beloning = "1075 euro",
                         soortOnderzoek = "Fysiek",
                         uitvoerendbedrijf = bedrijfId2,
-                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId2)
+                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId2),
+                        typebeperking =  beperkingList[random.Next(beperkingList.Count)].BeperkingId
                     },
                     new OnderzoekDto()
                     {
@@ -292,7 +307,8 @@ async Task CreateOnderzoekenAsync(IServiceProvider s, ApplicationDbContext db)
                         beloning = "1 euro",
                         soortOnderzoek = "Fysiek",
                         uitvoerendbedrijf = bedrijfId3,
-                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId3)
+                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId3),
+                        typebeperking = beperkingList[random.Next(beperkingList.Count)].BeperkingId
                     },
                     new OnderzoekDto()
                     {
@@ -302,8 +318,96 @@ async Task CreateOnderzoekenAsync(IServiceProvider s, ApplicationDbContext db)
                         beloning = "1250 euro",
                         soortOnderzoek = "Fysiek",
                         uitvoerendbedrijf = bedrijfId3,
-                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId3)
-                    }
+                        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(bedrijfId3),
+                        typebeperking = beperkingList[random.Next(beperkingList.Count)].BeperkingId
+                    },
+    new OnderzoekDto
+    {
+        titel = "Onderzoek 6",
+        korteBeschrijving = "This is the sixth onderzoek",
+        datum = DateTime.Now.AddDays(-14),
+        beloning = "1800 euro",
+        soortOnderzoek = random.Next(2) == 0 ? "Fysiek" : "Enquete",
+        uitvoerendbedrijf = random.Next(2) == 0 ? bedrijfId2 : bedrijfId3,
+        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(random.Next(2) == 0 ? bedrijfId2 : bedrijfId3),
+        typebeperking =  beperkingList[random.Next(beperkingList.Count)].BeperkingId
+    },
+    new OnderzoekDto
+    {
+        titel = "Onderzoek 7",
+        korteBeschrijving = "This is the seventh onderzoek",
+        datum = DateTime.Now.AddDays(-21),
+        beloning = "1200 euro",
+soortOnderzoek = random.Next(2) == 0 ? "Fysiek" : "Enquete",
+        uitvoerendbedrijf = random.Next(2) == 0 ? bedrijfId2 : bedrijfId3,
+        uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(random.Next(2) == 0 ? bedrijfId2 : bedrijfId3),
+        typebeperking = beperkingList[random.Next(beperkingList.Count)].BeperkingId
+    },
+new OnderzoekDto()
+{
+    titel = "Onderzoek 8",
+    korteBeschrijving = "This is the eighth onderzoek",
+    datum = DateTime.Now.AddDays(-7),
+    beloning = "1400 euro",
+    soortOnderzoek = random.Next(2) == 0 ? "Fysiek" : "Enquete",
+    uitvoerendbedrijf = random.Next(2) == 0 ? bedrijfId2 : bedrijfId3,
+    uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(random.Next(2) == 0 ? bedrijfId2 : bedrijfId3),
+    typebeperking =  beperkingList[random.Next(beperkingList.Count)].BeperkingId
+},
+new OnderzoekDto()
+{
+    titel = "Onderzoek 9",
+    korteBeschrijving = "This is the ninth onderzoek",
+    datum = DateTime.Now.AddDays(-7),
+    beloning = "1500 euro",
+    soortOnderzoek = random.Next(2) == 0 ? "Fysiek" : "Enquete",
+    uitvoerendbedrijf = random.Next(2) == 0 ? bedrijfId2 : bedrijfId3,
+    uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(random.Next(2) == 0 ? bedrijfId2 : bedrijfId3),
+    typebeperking =  beperkingList[random.Next(beperkingList.Count)].BeperkingId
+},new OnderzoekDto()
+{
+    titel = "Onderzoek 10",
+    korteBeschrijving = "This is the tenth onderzoek",
+    datum = DateTime.Now.AddDays(-7),
+    beloning = "1600 euro",
+    soortOnderzoek = random.Next(2) == 0 ? "Fysiek" : "Enquete",
+    uitvoerendbedrijf = random.Next(2) == 0 ? bedrijfId2 : bedrijfId3,
+    uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(random.Next(2) == 0 ? bedrijfId2 : bedrijfId3),
+    typebeperking = beperkingList[random.Next(beperkingList.Count)].BeperkingId
+},
+new OnderzoekDto()
+{
+    titel = "Onderzoek 11",
+    korteBeschrijving = "This is the eleventh onderzoek",
+    datum = DateTime.Now.AddDays(-7),
+    beloning = "1700 euro",
+    soortOnderzoek = random.Next(2) == 0 ? "Fysiek" : "Enquete",
+    uitvoerendbedrijf = random.Next(2) == 0 ? bedrijfId2 : bedrijfId3,
+    uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(random.Next(2) == 0 ? bedrijfId2 : bedrijfId3),
+    typebeperking = beperkingList[random.Next(beperkingList.Count)].BeperkingId
+},
+new OnderzoekDto()
+{
+    titel = "Onderzoek 12",
+    korteBeschrijving = "This is the twelfth onderzoek",
+    datum = DateTime.Now.AddDays(-7),
+    beloning = "1800 euro",
+    soortOnderzoek = "Enquete",
+    uitvoerendbedrijf = random.Next(2) == 0 ? bedrijfId2 : bedrijfId3,
+    uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(random.Next(2) == 0 ? bedrijfId2 : bedrijfId3),
+    typebeperking = beperkingList[random.Next(beperkingList.Count)].BeperkingId
+},
+new OnderzoekDto()
+{
+    titel = "Onderzoek 13",
+    korteBeschrijving = "This is the thirteenth onderzoek",
+    datum = DateTime.Now.AddDays(-7),
+    beloning = "1900 euro",
+    soortOnderzoek = "Fysiek",
+    uitvoerendbedrijf = random.Next(2) == 0 ? bedrijfId2 : bedrijfId3,
+    uitvoerendbedrijfnaam = userService.GetBedrijfsnaamById(random.Next(2) == 0 ? bedrijfId2 : bedrijfId3),
+    typebeperking =  beperkingList[random.Next(beperkingList.Count)].BeperkingId
+}
                 };
     foreach (var onderzoek in onderzoeken)
     {
@@ -372,7 +476,7 @@ async Task CreateUserBeperkingenAsync(IServiceProvider s, ApplicationDbContext d
     var beperkingService = s.GetRequiredService<BeperkingService>();
 
     // Define the emails of the users you want to process
-    var emails = new List<string> { "user4@gmail.com", "user5@gmail.com" };
+    var emails = new List<string> { "user4@gmail.com", "user5@gmail.com","user6@gmail.com","user7@gmail.com","user8@gmail.com","user9@gmail.com","user10@gmail.com" };
 
     // Get all users and filter them by their emails
     var gebruikers = (await userService.GetAllUsersAsync())
@@ -407,7 +511,7 @@ async Task CreateUserHulpmiddelenAsync(IServiceProvider s, ApplicationDbContext 
     var hulpmiddelService = s.GetRequiredService<HulpmiddelService>();
 
     // Define the emails of the users you want to process
-    var emails = new List<string> { "user4@gmail.com", "user5@gmail.com" };
+    var emails = new List<string> { "user4@gmail.com", "user5@gmail.com","user6@gmail.com","user7@gmail.com","user8@gmail.com","user9@gmail.com","user10@gmail.com"  };
 
     // Get all users and filter them by their emails
     var gebruikers = (await userService.GetAllUsersAsync())
@@ -435,4 +539,27 @@ async Task CreateUserHulpmiddelenAsync(IServiceProvider s, ApplicationDbContext 
             await hulpmiddelService.CreateUserHulpmiddelAsync(gebruiker.Id, hulpmiddel.HulpmiddelId);
         }
     }
+}
+async Task CreateGebruikerOnderzoeken(IServiceProvider s, ApplicationDbContext db){
+    var userService = s.GetRequiredService<UserService>();
+    var onderzoekService = s.GetRequiredService<OnderzoekService>();
+    var emails = new List<string> {"user6@gmail.com","user7@gmail.com","user8@gmail.com","user9@gmail.com","user10@gmail.com"  };
+    var gebruikers = (await userService.GetAllUsersAsync())
+        .Where(u => emails.Contains(u.Email));
+
+        var onderzoeken = await onderzoekService.GetOnderzoeken();
+        var random = new Random();
+        foreach(var gebruiker in gebruikers){
+            var onderzoekenCount = random.Next(2,5);
+            var onderzoekenList = new List<Onderzoek>();
+            for(int i = 0; i < onderzoekenCount; i++){
+                var onderzoek = onderzoeken[random.Next(0, onderzoeken.Count)];
+                if(!onderzoekenList.Contains(onderzoek)){
+                    onderzoekenList.Add(onderzoek);
+                }
+            }
+            foreach(var onderzoek in onderzoekenList){
+                await onderzoekService.CreateUserOnderzoekAsync(gebruiker.Id, onderzoek.OnderzoekId);
+            }
+        }
 }

@@ -98,5 +98,6 @@ public class ApplicationDbContext : IdentityDbContext<Gebruiker>
             .WithMany(o => o.ErvaringsdeskundigenOnderzoeken)
             .HasForeignKey(eo => eo.OnderzoekId);
 
+            
     }
 }
