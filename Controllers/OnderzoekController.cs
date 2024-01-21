@@ -24,7 +24,7 @@ namespace MyApplication.Controllers
             _userService = userService;
             _beperkingService = beperkingService;
         }
-
+[Authorize(Policy = "UserOnly")]
         [HttpGet("GetAllOnderzoeken")]
         public async Task<ActionResult<List<Onderzoek>>> GetAllOnderzoeken()
         {
@@ -32,6 +32,7 @@ namespace MyApplication.Controllers
             // var  uitvoerendBedrijf = result.UitvoerendBedrijf;
             return await _onderzoekService.GetOnderzoeken();
         }
+        [Authorize(Policy = "UserOnly")]
         [HttpGet("GetOnderzoekenByUserEmail")]
         public async Task<ActionResult<List<Onderzoek>>> GetOnderzoekenByUserEmail([FromHeader(Name = "Email")] string email)
         {
@@ -58,6 +59,7 @@ namespace MyApplication.Controllers
         {
             return await _onderzoekService.CreateOnderzoek(onderzoekDto);
         }
+        [Authorize(Policy = "UserOnly")]
         [HttpGet("GetOnderzoekByID/{id}")]
         public async Task<ActionResult<Onderzoek>> GetOnderzoekByID(int id)
         {
@@ -74,6 +76,7 @@ namespace MyApplication.Controllers
             await _onderzoekService.CreateUserOnderzoekAsync(gebruiker, ervaringsdeskundigeOnderzoekDto.onderzoek);
             return Ok();
         }
+        [Authorize(Policy = "UserOnly")]
         [HttpGet("GetCountAanmeldingForEachOnderzoek")]
         public async Task<ActionResult<List<OnderzoekCount>>> GetCountAanmeldingForEachOnderzoek()
         {
