@@ -12,8 +12,8 @@ using MyApplication.Data;
 namespace WDPR_dotnet_new_webapi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240110224349_iadafbhv")]
-    partial class iadafbhv
+    [Migration("20240120205848_initialcreate")]
+    partial class initialcreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -194,6 +194,9 @@ namespace WDPR_dotnet_new_webapi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("BeperkingId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("Datum")
                         .HasColumnType("datetime2");
 
@@ -230,7 +233,12 @@ namespace WDPR_dotnet_new_webapi.Migrations
                     b.Property<string>("UitvoerendBedrijfId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("UitvoerendBedrijfNaam")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("OnderzoekId");
+
+                    b.HasIndex("BeperkingId");
 
                     b.HasIndex("UitvoerendBedrijfId");
 
@@ -493,11 +501,19 @@ namespace WDPR_dotnet_new_webapi.Migrations
 
             modelBuilder.Entity("AccessibilityModels.Onderzoek", b =>
                 {
+                    b.HasOne("AccessibilityModels.Beperking", "beperking")
+                        .WithMany()
+                        .HasForeignKey("BeperkingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("AccessibilityModels.Bedrijf", "UitvoerendBedrijf")
                         .WithMany("Onderzoeken")
                         .HasForeignKey("UitvoerendBedrijfId");
 
                     b.Navigation("UitvoerendBedrijf");
+
+                    b.Navigation("beperking");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
