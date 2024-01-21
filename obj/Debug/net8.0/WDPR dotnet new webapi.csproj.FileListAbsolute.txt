@@ -891,3 +891,216 @@ C:\Users\MrFre\Ravioli v5\RavTest\bin\Debug\net8.0\zh-Hant\Microsoft.VisualStudi
 C:\Users\MrFre\Ravioli v5\RavTest\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Users\MrFre\Ravioli v5\RavTest\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Users\MrFre\Ravioli v5\RavTest\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\Github\RavTest\bin\Debug\net8.0\testhost.exe
+D:\Github\RavTest\bin\Debug\net8.0\testhost.dll
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.Development.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.Development.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.Development.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.Development.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.Development.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.Development.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.Development.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.Development.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.Development.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.Development.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.Development.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\appsettings.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\MyXunitTests.csproj.nuget.dgspec.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\project.assets.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.staticwebassets.runtime.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\Debug\net8.0\MyXunitTests.sourcelink.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\MyXunitTests.csproj.nuget.dgspec.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\project.assets.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.staticwebassets.runtime.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\Debug\net8.0\MyXunitTests.sourcelink.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\MyXunitTests.csproj.nuget.dgspec.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\project.assets.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.staticwebassets.runtime.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\Debug\net8.0\MyXunitTests.sourcelink.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\MyXunitTests.csproj.nuget.dgspec.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\project.assets.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.staticwebassets.runtime.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\Debug\net8.0\MyXunitTests.sourcelink.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\MyXunitTests.csproj.nuget.dgspec.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\project.assets.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.staticwebassets.runtime.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\Debug\net8.0\MyXunitTests.sourcelink.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\MyXunitTests.csproj.nuget.dgspec.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\project.assets.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.staticwebassets.runtime.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\Debug\net8.0\MyXunitTests.sourcelink.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\MyXunitTests.csproj.nuget.dgspec.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\project.assets.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.staticwebassets.runtime.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\Debug\net8.0\MyXunitTests.sourcelink.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\MyXunitTests.csproj.nuget.dgspec.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\project.assets.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.staticwebassets.runtime.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\Debug\net8.0\MyXunitTests.sourcelink.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\MyXunitTests.csproj.nuget.dgspec.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\project.assets.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.staticwebassets.runtime.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\Debug\net8.0\MyXunitTests.sourcelink.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\MyXunitTests.csproj.nuget.dgspec.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\project.assets.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.staticwebassets.runtime.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\Debug\net8.0\MyXunitTests.sourcelink.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\MyXunitTests.csproj.nuget.dgspec.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\MyXunitTests\obj\project.assets.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.deps.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.runtimeconfig.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\bin\Debug\net8.0\WDPR dotnet new webapi.staticwebassets.runtime.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\obj\Debug\net8.0\MyXunitTests.sourcelink.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\obj\MyXunitTests.csproj.nuget.dgspec.json
+D:\Github\RavTest\bin\Debug\net8.0\MyXunitTests\obj\project.assets.json
+D:\Github\RavTest\bin\Debug\net8.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\Github\RavTest\bin\Debug\net8.0\xunit.runner.reporters.netcoreapp10.dll
+D:\Github\RavTest\bin\Debug\net8.0\xunit.runner.utility.netcoreapp10.dll
+D:\Github\RavTest\bin\Debug\net8.0\Castle.Core.dll
+D:\Github\RavTest\bin\Debug\net8.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
+D:\Github\RavTest\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\Github\RavTest\bin\Debug\net8.0\Microsoft.TestPlatform.CoreUtilities.dll
+D:\Github\RavTest\bin\Debug\net8.0\Microsoft.TestPlatform.PlatformAbstractions.dll
+D:\Github\RavTest\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+D:\Github\RavTest\bin\Debug\net8.0\Microsoft.TestPlatform.CommunicationUtilities.dll
+D:\Github\RavTest\bin\Debug\net8.0\Microsoft.TestPlatform.CrossPlatEngine.dll
+D:\Github\RavTest\bin\Debug\net8.0\Microsoft.TestPlatform.Utilities.dll
+D:\Github\RavTest\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.Common.dll
+D:\Github\RavTest\bin\Debug\net8.0\Moq.dll
+D:\Github\RavTest\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\Github\RavTest\bin\Debug\net8.0\xunit.abstractions.dll
+D:\Github\RavTest\bin\Debug\net8.0\xunit.assert.dll
+D:\Github\RavTest\bin\Debug\net8.0\xunit.core.dll
+D:\Github\RavTest\bin\Debug\net8.0\xunit.execution.dotnet.dll
+D:\Github\RavTest\bin\Debug\net8.0\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\de\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\de\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\es\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\es\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\fr\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\fr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\it\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\it\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ja\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ja\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ko\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ko\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\pl\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\pl\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\pt-BR\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\pt-BR\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ru\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ru\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\tr\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\tr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\zh-Hans\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\zh-Hant\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\cs\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\cs\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\cs\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\de\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\de\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\de\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\es\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\es\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\es\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\fr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\fr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\fr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\it\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\it\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\it\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ja\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ja\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ja\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ko\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ko\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ko\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\pl\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\pl\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\pl\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\pt-BR\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\pt-BR\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\pt-BR\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ru\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ru\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ru\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\tr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\tr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\tr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\zh-Hans\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\zh-Hans\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\cs\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\de\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\it\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ja\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ko\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\pl\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\pt-BR\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\ru\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\tr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Github\RavTest\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\Github\RavTest\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml

@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MrFre\\Ravioli v5\\RavTest\\WDPR dotnet new webapi.csproj": {}
+    "D:\\Github\\RavTest\\WDPR dotnet new webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MrFre\\Ravioli v5\\RavTest\\WDPR dotnet new webapi.csproj": {
+    "D:\\Github\\RavTest\\WDPR dotnet new webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MrFre\\Ravioli v5\\RavTest\\WDPR dotnet new webapi.csproj",
+        "projectUniqueName": "D:\\Github\\RavTest\\WDPR dotnet new webapi.csproj",
         "projectName": "WDPR dotnet new webapi",
-        "projectPath": "C:\\Users\\MrFre\\Ravioli v5\\RavTest\\WDPR dotnet new webapi.csproj",
-        "packagesPath": "C:\\Users\\MrFre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MrFre\\Ravioli v5\\RavTest\\obj\\",
+        "projectPath": "D:\\Github\\RavTest\\WDPR dotnet new webapi.csproj",
+        "packagesPath": "C:\\Users\\ravo2\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\RavTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MrFre\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ravo2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,7 +50,7 @@
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.AspNetCore.Cors": {
               "target": "Package",
@@ -132,7 +134,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
