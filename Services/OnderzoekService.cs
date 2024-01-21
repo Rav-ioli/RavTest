@@ -84,7 +84,7 @@ public class OnderzoekService
         foreach (var onderzoek in onderzoeken)
         {
             var count = await _databaseContext.ErvaringsdeskundigeOnderzoeken.Where(e => e.OnderzoekId == onderzoek.OnderzoekId).CountAsync();
-            result.Add(new OnderzoekCount { Titel = onderzoek.Titel, Count = count });
+            result.Add(new OnderzoekCount { Titel = onderzoek.Titel, Count = count, OnderzoekID = onderzoek.OnderzoekId });
         }
 
         return result;
