@@ -36,6 +36,14 @@ public class OnderzoekService
         await _databaseContext.SaveChangesAsync();
         return onderzoek;
     }
+
+    public async Task DeleteOnderzoek(int id)
+    {
+        var onderzoek = await _databaseContext.Onderzoeken.FindAsync(id);
+        _databaseContext.Onderzoeken.Remove(onderzoek);
+        await _databaseContext.SaveChangesAsync();
+    }
+
     public async Task<Onderzoek> GetOnderzoek(int id)
     {
         return await _databaseContext.Onderzoeken.FindAsync(id);
@@ -89,4 +97,7 @@ public class OnderzoekService
 
         return result;
     }
+
+    
+
 }
