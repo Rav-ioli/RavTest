@@ -19,8 +19,16 @@ public class OnderzoekService
     public async Task<Onderzoek> CreateOnderzoek(OnderzoekDto onderzoekDto)
     {
 
-        var bedrijf = await _databaseContext.Bedrijven.FindAsync(onderzoekDto.uitvoerendbedrijf);
-        var onderzoek = new Onderzoek
+Bedrijf bedrijf = null;
+
+    if (!string.IsNullOrEmpty(onderzoekDto.uitvoerendbedrijfemail))
+    {
+        bedrijf = await _databaseContext.Bedrijven.FirstOrDefaultAsync(b => b.Email == onderzoekDto.uitvoerendbedrijfemail);
+    }
+    else
+    {
+        bedrijf = await _databaseContext.Bedrijven.FindAsync(onderzoekDto.uitvoerendbedrijf);
+    }        var onderzoek = new Onderzoek
         {
             Titel = onderzoekDto.titel,
             KorteBeschrijving = onderzoekDto.korteBeschrijving,
@@ -29,7 +37,8 @@ public class OnderzoekService
             SoortOnderzoek = onderzoekDto.soortOnderzoek,
             UitvoerendBedrijf = bedrijf,
             UitvoerendBedrijfNaam = bedrijf?.Bedrijfsnaam,
-            beperking = await _databaseContext.Beperkingen.FindAsync(onderzoekDto.typebeperking)
+            beperking = await _databaseContext.Beperkingen.FindAsync(onderzoekDto.typebeperking),
+            Locatie =  string.IsNullOrEmpty(onderzoekDto.locatie) ? "N/A" : onderzoekDto.locatie
         };
 
         await _databaseContext.Onderzoeken.AddAsync(onderzoek);
@@ -96,6 +105,11 @@ public class OnderzoekService
         }
 
         return result;
+    }
+    public async Task<List<Onderzoek>> GetOnderzoekenFromBedrijf(string email){
+        var bedrijf = await _databaseContext.Users.FirstOrDefaultAsync(b => b.Email == email);
+         var onderzoeken = await _databaseContext.Onderzoeken.Where(o => o.UitvoerendBedrijf == bedrijf).ToListAsync();
+        return onderzoeken;
     }
 
     
