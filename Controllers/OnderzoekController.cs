@@ -80,5 +80,12 @@ namespace MyApplication.Controllers
             var result = await _onderzoekService.GetCountAanmeldingForEachOnderzoek();
             return result;
         }
+        [HttpGet("GetOnderzoekenFromBedrijf")]
+        public async Task<ActionResult<List<Onderzoek>>> GetOnderzoekenFromBedrijf([FromHeader(Name = "Email")] string email)
+        {
+            var result = await _onderzoekService.GetOnderzoekenFromBedrijf(email);
+            return result;
+        }
+  
     }
 }
